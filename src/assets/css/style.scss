@@ -1,0 +1,61 @@
+.tooltips-dom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tooltips {
+  width: 140px;
+  height: 26px;
+  background: #fff;
+  border-radius: 4px;
+  left: calc(50% + var(--toolsLeft));
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+  padding: 10px;
+  background: grey;
+  a {
+    margin: 0 2px;
+    font-size: x-large;
+    color: white;
+    display: inline-flex
+  }
+  a.active {
+    color: blue;
+  }
+}
+.tooltips:before {
+  transform: rotate(45deg);
+  content: " ";
+  display: block;
+  background: grey;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #fff;
+}
+
+.tooltips:after {
+  content: " ";
+  display: block;
+  background: grey;
+  width: 16px;
+  height: 7px;
+  position: absolute;
+  /*right: 27px;
+            top: 0px;*/
+  background: #fff;
+}
+.tooltips.left:before {
+  left: -5px;
+  background: grey;
+  top: 20px;
+  box-shadow: #d4d4d4 -1px 1px 5px;
+}
+.tooltips.left:after {
+  width: 7px;
+  height: 16px;
+  background: grey;
+  left: 0;
+  top: 17px;
+}

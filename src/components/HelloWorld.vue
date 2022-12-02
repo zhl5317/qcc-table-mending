@@ -1,4 +1,5 @@
 <template>
+  <div style="width: 100%; display: block">
   <TableMendingVue
     :image="image"
     :data="data"
@@ -14,6 +15,7 @@
     @deleteLine="deleteLine"
     @saveMending="saveMending"
   />
+  </div>
 </template>
 
 <script>
@@ -41,7 +43,7 @@ export default {
       immediate: true,
       deep: true,
       handler(val) {
-        console.log(val, "!11");
+        console.log(val);
       },
     },
   },

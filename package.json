@@ -1,8 +1,8 @@
 {
   "name": "qcc-table-mending",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "zhouhl",
-  "description": "一款对图片支持线框裁剪的vue组件， 输出lines和boxs 位置信息",
+  "description": "一款对图片支持线框裁剪的vue组件, 输出lines和boxs 位置信息",
   "repository": {
     "type": "git",
     "url": "https://github.com/zhl5317/qcc-table-mending.git"
@@ -10,10 +10,10 @@
   "files": [
     "dist"
   ],
-  "main": "dist/_assets/index.js",
+  "main": "dist/qcc-table-mending.umd.min.js",
+  "private": false,
   "keywords": [
-    "vue3",
-    "element-plus",
+    "vue2",
     "table",
     "canvas",
     "draw lines",
@@ -22,20 +22,20 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "serve": "vue-cli-service serve --mode dev",
+    "build": "vue-cli-service build",
+    "build:package": "vue-cli-service build --target lib --name qcc-table-mending --dest dist"
   },
   "dependencies": {
-    "element-plus": "^2.2.22",
-    "element-ui": "^2.15.12",
-    "jquery": "^3.6.1",
+    "@vue/cli-service": "^5.0.1",
     "lodash": "^4.17.21",
-    "vue": "^3.0.4"
+    "node-sass": "^4.14.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.4",
     "sass": "^1.56.1",
-    "sass-loader": "^13.2.0",
-    "vite": "^1.0.0-rc.13"
+    "sass-loader": "^10.4.1"
   }
 }

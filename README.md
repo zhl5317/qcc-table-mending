@@ -31,7 +31,7 @@ Vue.use(TableMendingVue)
   |  ----    | ----  |----  |----  |
   | image    | String |'../xxx./demo.png' |图片,支持图片地址或base64格式 |
   | data     | Object |{lines： {'cols': [], 'rows': []}, boxs: []} |线段，线框信息 |
-  | options  | Object |options = {isShowGuideLine, maxWidth,linewidth, linesColor} |单元格 |
+  | options  | Object |options = {isShowGuideLine, maxWidth,linewidth, linesColor} | 其他参数 |
 
 
 * 事件

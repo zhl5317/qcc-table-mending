@@ -9,22 +9,108 @@
       ></canvas>
     </div>
 
-    <div class="tooltips left" :style="{ '--toolsLeft': toolsLeft+'px' }">
-      <a  href="javascript:void(0)" @click="toolsHandle(2)"  :class="type === 2? 'active': ''" title="添加竖线"><svg viewBox="64 64 896 896" focusable="false" data-icon="border-horizontal" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M540 144h-56c-4.4 0-8 3.6-8 8v720c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V152c0-4.4-3.6-8-8-8zm-166 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm498 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm498 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM208 310h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 166h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm664 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM374 808h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z"></path></svg></a>
-      <a  href="javascript:void(0)" @click="toolsHandle(1)"  :class="type === 1? 'active': ''" title="添加横线"><svg viewBox="64 64 896 896" focusable="false" data-icon="border-verticle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M872 476H152c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-166h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 498h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-664h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 498h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM650 216h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm56 592h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-56-592h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-166 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM208 808h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM152 382h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM208 642h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z"></path></svg></a>
-      <a  href="javascript:void(0)" @click="toolsHandle(5)"  :class="type === 5? 'active': ''" title="合并单元格"><svg viewBox="64 64 896 896" focusable="false" data-icon="border-outer" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM484 366h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM302 548h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm364 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-182 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 182h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8z"></path></svg></a>
-      <a  href="javascript:void(0)" @click="toolsHandle(3)"  :class="type === 3? 'active': ''" title="删除线"><svg viewBox="64 64 896 896" focusable="false" data-icon="close-square" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M354 671h58.9c4.7 0 9.2-2.1 12.3-5.7L512 561.8l86.8 103.5c3 3.6 7.5 5.7 12.3 5.7H670c6.8 0 10.5-7.9 6.1-13.1L553.8 512l122.4-145.9c4.4-5.2.7-13.1-6.1-13.1h-58.9c-4.7 0-9.2 2.1-12.3 5.7L512 462.2l-86.8-103.5c-3-3.6-7.5-5.7-12.3-5.7H354c-6.8 0-10.5 7.9-6.1 13.1L470.2 512 347.9 657.9A7.95 7.95 0 00354 671z"></path><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"></path></svg></a>
-      <a  href="javascript:void(0)" @click="toolsHandle(6)"  :class="type === 6? 'active': ''" title="保存"><svg viewBox="64 64 896 896" focusable="false" data-icon="save" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"></path></svg></a>
+    <div class="tooltips left" :style="{ '--toolsLeft': toolsLeft + 'px' }">
+      <a
+        href="javascript:void(0)"
+        @click="toolsHandle(2)"
+        :class="type === 2 ? 'active' : ''"
+        title="添加竖线"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          data-icon="border-horizontal"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M540 144h-56c-4.4 0-8 3.6-8 8v720c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V152c0-4.4-3.6-8-8-8zm-166 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm498 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm498 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM208 310h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-664 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 166h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm664 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM374 808h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-332h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z"
+          ></path></svg
+      ></a>
+      <a
+        href="javascript:void(0)"
+        @click="toolsHandle(1)"
+        :class="type === 1 ? 'active' : ''"
+        title="添加横线"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          data-icon="border-verticle"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M872 476H152c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-166h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 498h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0-664h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 498h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM650 216h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm56 592h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-56-592h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-166 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM208 808h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM152 382h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM208 642h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm332 0h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z"
+          ></path></svg
+      ></a>
+      <a
+        href="javascript:void(0)"
+        @click="toolsHandle(5)"
+        :class="type === 5 ? 'active' : ''"
+        title="合并单元格"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          data-icon="border-outer"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM484 366h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zM302 548h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm364 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-182 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 182h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8z"
+          ></path></svg
+      ></a>
+      <a
+        href="javascript:void(0)"
+        @click="toolsHandle(3)"
+        :class="type === 3 ? 'active' : ''"
+        title="删除线"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          data-icon="close-square"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M354 671h58.9c4.7 0 9.2-2.1 12.3-5.7L512 561.8l86.8 103.5c3 3.6 7.5 5.7 12.3 5.7H670c6.8 0 10.5-7.9 6.1-13.1L553.8 512l122.4-145.9c4.4-5.2.7-13.1-6.1-13.1h-58.9c-4.7 0-9.2 2.1-12.3 5.7L512 462.2l-86.8-103.5c-3-3.6-7.5-5.7-12.3-5.7H354c-6.8 0-10.5 7.9-6.1 13.1L470.2 512 347.9 657.9A7.95 7.95 0 00354 671z"
+          ></path>
+          <path
+            d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
+          ></path></svg
+      ></a>
+      <a
+        href="javascript:void(0)"
+        @click="toolsHandle(6)"
+        :class="type === 6 ? 'active' : ''"
+        title="保存"
+        ><svg
+          viewBox="64 64 896 896"
+          focusable="false"
+          data-icon="save"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"
+          ></path></svg
+      ></a>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
 import _ from "lodash";
-import $ from "jquery";
-import { ElMessage as Message } from 'element-plus'
 export default {
-  name: "TableMending",
+  name: "TableMendingVue",
   components: {},
   data() {
     return {
@@ -41,42 +127,42 @@ export default {
       bl: 1,
       toolsLeft: 0,
       parsedData: {
-        lines: {"cols": [], "rows": []},
-        boxs: []
-      }
+        lines: { cols: [], rows: [] },
+        boxs: [],
+      },
     };
   },
   props: {
     image: {
       type: String,
       require: true,
-      default: {}
+      default: {},
     },
     options: {
       type: Object,
       require: false,
-      default: ()=> {
+      default: () => {
         return {
           isShowGuideLine: true,
           maxWidth: 650,
-          linesColor: 'blue',
-          linewidth: 1
-        }
-      }
+          linesColor: "blue",
+          linewidth: 1,
+        };
+      },
     },
     data: {
       type: Object,
       require: false,
-      default: ()=> {
+      default: () => {
         return {
           boxs: [],
-          lines: {"cols": [], "rows": []}
-        }
-      }
-    }
+          lines: { cols: [], rows: [] },
+        };
+      },
+    },
   },
   created() {
-    this.parsedData = this.data
+    this.parsedData = this.data;
   },
   async mounted() {
     this.merge_bboxs = [];
@@ -84,7 +170,6 @@ export default {
     const im = this.image;
     this.active_rect = [0, 0, 0, 0];
     let { width, height } = await this.getImageSize(im);
-    console.log({ width, height } )
     if (width > this.options.maxWidth) {
       this.bl = (width / this.options.maxWidth).toFixed(15);
       width = this.options.maxWidth;
@@ -92,43 +177,41 @@ export default {
     } else {
       this.bl = 1;
     }
-    // console.log(this.bl, height)
-    this.lines = this.compressionRatio(this.lines)
-    this.boxes = this.compressionRatio(this.boxes)
-    this.cvs1 = document.getElementById("cvs1");
-    $("#cvs1").css("background-image", `url(${im})`);
-    $("#cvs1").css("background-repeat", `no-repeat`);
-    $("#cvs1").css("background-size", `100% 100%`);
+    this.lines = this.compressionRatio(this.lines);
+    this.boxes = this.compressionRatio(this.boxes);
+    this.cvs1 = document.querySelector("#cvs1");
+    this.cvs1.style.setProperty("background-image", `url(${im})`);
+    this.cvs1.style.setProperty("background-repeat", `no-repeat`);
+    this.cvs1.style.setProperty("background-size", `100% 100%`);
     this.ctx1 = this.cvs1.getContext("2d");
     this.cvs1.width = width;
     this.cvs1.height = height;
     this.cvs1.style.border = "1px solid #ccc";
-    this.cvs = document.getElementById("cvs");
+    this.cvs = document.querySelector("#cvs");
     this.ctx = this.cvs.getContext("2d");
     this.cvs.width = width;
     this.cvs.height = height;
     this.cvs.style.border = "1px solid #ccc";
-    console.log(this.cvs)
-    $("#cvs").css("left", `calc((100% - ${width}px) / 2)`);
-    $("#cvs1").css("left", `calc((100% - ${width}px) / 2)`);
-    this.toolsLeft = width / 2 +10
+    this.cvs.style.setProperty("left", `calc((100% - ${width}px) / 2)`);
+    this.cvs1.style.setProperty("left", `calc((100% - ${width}px) / 2)`);
+    this.toolsLeft = width / 2 + 10;
     this.supplyRangeLines();
     this.mouseEvent();
   },
   watch: {
     lines: {
-    	immediate: true,
+      immediate: true,
       deep: true,
-    	handler(val){
-        this.parsedData.lines = this.recoveryRatio(val)
-      }
+      handler(val) {
+        this.parsedData.lines = this.recoveryRatio(val);
+      },
     },
     boxes: {
-    	immediate: true,
+      immediate: true,
       deep: true,
-    	handler(val){
-        this.parsedData.boxs = this.recoveryRatio(val)
-      }
+      handler(val) {
+        this.parsedData.boxs = this.recoveryRatio(val);
+      },
     },
     parsedData: {
       handler(newValue, oldValue) {
@@ -136,18 +219,13 @@ export default {
       },
       immediate: true,
       deep: true,
-    }
+    },
   },
   methods: {
     toolsHandle(type) {
-      this.type = type
+      this.type = type;
       if (type === 5) {
         if (this.merge_bboxs.length === 0) {
-          Message({
-            showClose: false,
-            message: '请先选择合并区域',
-            type: 'warning',
-          })
           this.type = 0;
           return false;
         }
@@ -156,13 +234,20 @@ export default {
         this.lines = this.boxes_to_lines(merged_boxes);
         this.boxes = merged_boxes;
         this.ctx1.clearRect(0, 0, this.cvs1.width, this.cvs1.height);
-        this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
+        this.drawLine(
+          this.options.linesColor,
+          this.options.lineWidth,
+          this.lines
+        );
         this.merge_bboxs = [];
         this.active_rect = [0, 0, 0, 0];
         this.type = 0;
       } else if (type === 6) {
-        this.type = 0
-        this.$emit('saveMending', {lines: this.recoveryRatio(this.lines), boxs: this.recoveryRatio(this.boxes)})
+        this.type = 0;
+        this.$emit("saveMending", {
+          lines: this.recoveryRatio(this.lines),
+          boxs: this.recoveryRatio(this.boxes),
+        });
       } else {
         this.merge_bboxs = [];
         this.active_rect = [0, 0, 0, 0];
@@ -172,35 +257,35 @@ export default {
 
     compressionRatio(data) {
       if (data.constructor === Array) {
-        return data.map(v=> {
-          return Array.from(v, value => value / this.bl)
-      })
+        return data.map((v) => {
+          return Array.from(v, (value) => value / this.bl);
+        });
       } else if (data.constructor === Object) {
-        let new_lines = {"cols": [], "rows": []}
-        Object.keys(data).forEach( f => {
-            const cur = data[f]
-            new_lines[f] = cur.map(v=> {
-                return Array.from(v, value => value / this.bl)
-            })
-        })
-        return new_lines
+        let new_lines = { cols: [], rows: [] };
+        Object.keys(data).forEach((f) => {
+          const cur = data[f];
+          new_lines[f] = cur.map((v) => {
+            return Array.from(v, (value) => value / this.bl);
+          });
+        });
+        return new_lines;
       }
     },
 
     recoveryRatio(data) {
       if (data.constructor === Array) {
-        return data.map(v=> {
-          return Array.from(v, value => value * this.bl)
-      })
+        return data.map((v) => {
+          return Array.from(v, (value) => value * this.bl);
+        });
       } else if (data.constructor === Object) {
-        let new_lines = {"cols": [], "rows": []}
-        Object.keys(data).forEach( f => {
-            const cur = data[f]
-            new_lines[f] = cur.map(v=> {
-                return Array.from(v, value => value * this.bl)
-            })
-        })
-        return new_lines
+        let new_lines = { cols: [], rows: [] };
+        Object.keys(data).forEach((f) => {
+          const cur = data[f];
+          new_lines[f] = cur.map((v) => {
+            return Array.from(v, (value) => value * this.bl);
+          });
+        });
+        return new_lines;
       }
     },
     supplyRangeLines() {
@@ -214,11 +299,16 @@ export default {
         ...[this.cvs.width, 0],
         ...[this.cvs.width, this.cvs.height],
       ]);
-      this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
+      this.drawLine(
+        this.options.linesColor,
+        this.options.lineWidth,
+        this.lines
+      );
     },
     getImageSize(url) {
-      if (url.includes(";base64=")) { //base64
-        url = url.split("src=")[1].replace("\"", "").replace("\">", "");
+      if (url.includes(";base64=")) {
+        //base64
+        url = url.split("src=")[1].replace('"', "").replace('">', "");
       }
       return new Promise((resolve) => {
         var img = document.createElement("img");
@@ -230,12 +320,11 @@ export default {
     },
 
     drawLine(linecolor, linewidth, lines) {
-      console.log(lines, "sss")
       this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height);
       lines.rows.forEach(([from, to, start, end]) => {
         this.ctx.beginPath();
         this.ctx.lineWidth = linewidth;
-        this.ctx.strokeStyle = linecolor
+        this.ctx.strokeStyle = linecolor;
         this.ctx.moveTo(from, to);
         this.ctx.lineTo(start, end);
         this.ctx.stroke();
@@ -243,7 +332,7 @@ export default {
       lines.cols.forEach(([from, to, start, end]) => {
         this.ctx.beginPath();
         this.ctx.lineWidth = linewidth;
-        this.ctx.strokeStyle = linecolor
+        this.ctx.strokeStyle = linecolor;
         this.ctx.moveTo(from, to);
         this.ctx.lineTo(start, end);
         this.ctx.stroke();
@@ -286,20 +375,24 @@ export default {
       this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height);
       _.remove(this.lines.rows, (n) => {
         if (n[1] <= y + 2 && n[1] >= y - 2) {
-          this.$emit("deleteLine", ...this.recoveryRatio([n]))
+          this.$emit("deleteLine", ...this.recoveryRatio([n]));
         }
         return n[1] <= y + 2 && n[1] >= y - 2;
       });
 
       _.remove(this.lines.cols, (n) => {
         if (n[0] <= x + 2 && n[0] >= x - 2) {
-           this.$emit("deleteLine", ...this.recoveryRatio([n]))
+          this.$emit("deleteLine", ...this.recoveryRatio([n]));
         }
         return n[0] <= x + 2 && n[0] >= x - 2;
       });
       this.boxes = this.lines_to_boxes(this.lines);
       this.lines = this.boxes_to_lines(this.boxes);
-      this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
+      this.drawLine(
+        this.options.linesColor,
+        this.options.lineWidth,
+        this.lines
+      );
     },
 
     drawGuideLine(from, to, linecolor) {
@@ -352,7 +445,12 @@ export default {
             );
           } else if (this.type === 3) {
             // 删除
-            this.hightlightDrawLine(this.options.linesColor, 2, e.offsetY, e.offsetX);
+            this.hightlightDrawLine(
+              this.options.linesColor,
+              2,
+              e.offsetY,
+              e.offsetX
+            );
           }
         } else {
           this.active_rect[2] = e.clientX - this.cvs1.offsetLeft;
@@ -387,11 +485,17 @@ export default {
                 ...[0, e.offsetY],
                 ...[this.cvs.width, e.offsetY],
               ]);
-              this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
-              this.$emit("rowAdd", ...this.recoveryRatio([[
-                ...[0, e.offsetY],
-                ...[this.cvs.width, e.offsetY],
-              ]]))
+              this.drawLine(
+                this.options.linesColor,
+                this.options.lineWidth,
+                this.lines
+              );
+              this.$emit(
+                "rowAdd",
+                ...this.recoveryRatio([
+                  [...[0, e.offsetY], ...[this.cvs.width, e.offsetY]],
+                ])
+              );
             }
           } else if (this.type === 2) {
             let isForbidden = false;
@@ -406,11 +510,17 @@ export default {
                 ...[e.offsetX, 0],
                 ...[e.offsetX, this.cvs.height],
               ]);
-              this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
-              this.$emit("colAdd", ...this.recoveryRatio([[
-                ...[e.offsetX, 0],
-                ...[e.offsetX, this.cvs.height]
-              ]]))
+              this.drawLine(
+                this.options.linesColor,
+                this.options.lineWidth,
+                this.lines
+              );
+              this.$emit(
+                "colAdd",
+                ...this.recoveryRatio([
+                  [...[e.offsetX, 0], ...[e.offsetX, this.cvs.height]],
+                ])
+              );
             }
           } else if (this.type === 3) {
             this.deleteLines(this.options.linesColor, 1, e.offsetY, e.offsetX);
@@ -533,7 +643,11 @@ export default {
       this.merge_bboxs = [];
       this.ctx1.clearRect(0, 0, this.cvs1.width, this.cvs1.height);
       this.type = 0;
-      this.drawLine(this.options.linesColor, this.options.lineWidth, this.lines);
+      this.drawLine(
+        this.options.linesColor,
+        this.options.lineWidth,
+        this.lines
+      );
     },
     boxes_to_points(boxes) {
       const duplicate = (arr) => {
@@ -724,13 +838,13 @@ export default {
           this.merge_bboxs.push(box);
         }
       }
-      if (this.merge_bboxs.length > 1 ) {
-        for(let box of this.merge_bboxs) {
+      if (this.merge_bboxs.length > 1) {
+        for (let box of this.merge_bboxs) {
           // 盘鼠标轨迹对呀的rect对角线 2点坐标在 box内 高亮bbox
           this.ctx1.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
           this.ctx1.fillStyle = "rgba(165, 0, 0, 0.4)";
         }
-        this.$emit("mergeLines", this.recoveryRatio(this.merge_bboxs))
+        this.$emit("mergeLines", this.recoveryRatio(this.merge_bboxs));
       }
     }, 100),
 
@@ -748,65 +862,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tooltips-dom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.tooltips {
-  width: 140px;
-  height: 26px;
-  background: #fff;
-  border-radius: 4px;
-  left: calc(50% + var(--toolsLeft));
-  position: absolute;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
-  padding: 10px;
-  background: grey;
-  a {
-    margin: 0 2px;
-    font-size: x-large;
-    color: white;
-    display: inline-flex
-  }
-  a.active {
-    color: blue;
-  }
-}
-.tooltips:before {
-  transform: rotate(45deg);
-  content: " ";
-  display: block;
-  background: grey;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  background: #fff;
-}
-
-.tooltips:after {
-  content: " ";
-  display: block;
-  background: grey;
-  width: 16px;
-  height: 7px;
-  position: absolute;
-  /*right: 27px;
-            top: 0px;*/
-  background: #fff;
-}
-.tooltips.left:before {
-  left: -5px;
-  background: grey;
-  top: 20px;
-  box-shadow: #d4d4d4 -1px 1px 5px;
-}
-.tooltips.left:after {
-  width: 7px;
-  height: 16px;
-  background: grey;
-  left: 0;
-  top: 17px;
-}
+@import "../assets/css/style.scss";
 </style>

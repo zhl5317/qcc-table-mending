@@ -1,8 +1,11 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
 import './index.css'
-import ElementPlus from 'element-plus' // 引入element-plus
-import 'element-plus/theme-chalk/index.css' // 引入element-plus的样式
-const Vue = createApp(App)
-Vue.use(ElementPlus)
-Vue.mount('#app')
+import TableMendingVue from "./index.js"
+Vue.use(TableMendingVue)
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  components: {App},
+  template: '<App/>'
+})
