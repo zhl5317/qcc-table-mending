@@ -37,11 +37,11 @@ Vue.use(TableMendingVue)
 * 事件
   |  名称       | 回调  |描述  |
   |  --------   | ----  | ----  |
-  | rowAdd      | 当前线段位置 [x1,y1,x2,y2] |加横线 |
-  | colAdd      | 当前线段位置 [x1,y1,x2,y2] |加竖线 |
-  | mergeLines  | 合并的单元格位置[[x1,y1,x2,y2]] |合并线 |
-  | deleteLine  | 删除的线段位置[x1,y1,x2,y2] |删除线 |
-  | saveMending | 线和框信息 {lines: {}, boxs: []} |保存裁剪信息 |
+  | rowadd      | 当前线段位置 [x1,y1,x2,y2] |加横线 |
+  | coladd      | 当前线段位置 [x1,y1,x2,y2] |加竖线 |
+  | mergelines  | 合并的单元格位置[[x1,y1,x2,y2]] |合并线 |
+  | deleteline  | 删除的线段位置[x1,y1,x2,y2] |删除线 |
+  | savemending | 线和框信息 {lines: {}, boxs: []} |保存裁剪信息 |
 
 # 样例
 ```html

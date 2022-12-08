@@ -136,7 +136,7 @@ export default {
     image: {
       type: String,
       require: true,
-      default: {},
+      default: () => "",
     },
     options: {
       type: Object,
@@ -244,7 +244,7 @@ export default {
         this.type = 0;
       } else if (type === 6) {
         this.type = 0;
-        this.$emit("saveMending", {
+        this.$emit("savemending", {
           lines: this.recoveryRatio(this.lines),
           boxs: this.recoveryRatio(this.boxes),
         });
@@ -375,14 +375,14 @@ export default {
       this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height);
       _.remove(this.lines.rows, (n) => {
         if (n[1] <= y + 2 && n[1] >= y - 2) {
-          this.$emit("deleteLine", ...this.recoveryRatio([n]));
+          this.$emit("deleteline", ...this.recoveryRatio([n]));
         }
         return n[1] <= y + 2 && n[1] >= y - 2;
       });
 
       _.remove(this.lines.cols, (n) => {
         if (n[0] <= x + 2 && n[0] >= x - 2) {
-          this.$emit("deleteLine", ...this.recoveryRatio([n]));
+          this.$emit("deleteline", ...this.recoveryRatio([n]));
         }
         return n[0] <= x + 2 && n[0] >= x - 2;
       });
@@ -491,7 +491,7 @@ export default {
                 this.lines
               );
               this.$emit(
-                "rowAdd",
+                "rowadd",
                 ...this.recoveryRatio([
                   [...[0, e.offsetY], ...[this.cvs.width, e.offsetY]],
                 ])
@@ -516,7 +516,7 @@ export default {
                 this.lines
               );
               this.$emit(
-                "colAdd",
+                "coladd",
                 ...this.recoveryRatio([
                   [...[e.offsetX, 0], ...[e.offsetX, this.cvs.height]],
                 ])
@@ -844,7 +844,7 @@ export default {
           this.ctx1.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
           this.ctx1.fillStyle = "rgba(165, 0, 0, 0.4)";
         }
-        this.$emit("mergeLines", this.recoveryRatio(this.merge_bboxs));
+        this.$emit("mergelines", this.recoveryRatio(this.merge_bboxs));
       }
     }, 100),
 

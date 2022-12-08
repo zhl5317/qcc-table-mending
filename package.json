@@ -1,6 +1,6 @@
 {
   "name": "qcc-table-mending",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "author": "zhouhl",
   "description": "一款对图片支持线框裁剪的vue组件, 输出lines和boxs 位置信息",
   "repository": {
