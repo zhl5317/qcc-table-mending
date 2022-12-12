@@ -85,6 +85,12 @@
             d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
           ></path></svg
       ></a>
+      <a  href="javascript:void(0)"
+        @click="toolsHandle(4)"
+        :class="type === 4 ? 'active' : ''"
+        title="清空画布">
+          <svg viewBox="64 64 896 896" focusable="false" data-icon="clear" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6a25.95 25.95 0 0025.6 30.4h723c1.5 0 3-.1 4.4-.4a25.88 25.88 0 0021.2-30zM204 390h272V182h72v208h272v104H204V390zm468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"></path></svg>
+        </a>
       <a
         href="javascript:void(0)"
         @click="toolsHandle(6)"
@@ -177,8 +183,6 @@ export default {
     } else {
       this.bl = 1;
     }
-    this.lines = this.compressionRatio(this.lines);
-    this.boxes = this.compressionRatio(this.boxes);
     this.cvs1 = document.querySelector("#cvs1");
     this.cvs1.style.setProperty("background-image", `url(${im})`);
     this.cvs1.style.setProperty("background-repeat", `no-repeat`);
@@ -195,7 +199,17 @@ export default {
     this.cvs.style.setProperty("left", `calc((100% - ${width}px) / 2)`);
     this.cvs1.style.setProperty("left", `calc((100% - ${width}px) / 2)`);
     this.toolsLeft = width / 2 + 10;
-    this.supplyRangeLines();
+    this.boxes = this.compressionRatio(this.boxes);
+    if (this.boxes.length > 0) {
+      this.lines = this.boxes_to_lines(this.boxes);
+      this.drawLine(
+          this.options.linesColor,
+          this.options.lineWidth,
+          this.lines
+        );
+    } else {
+      this.supplyRangeLines();
+    }
     this.mouseEvent();
   },
   watch: {
@@ -248,6 +262,10 @@ export default {
           lines: this.recoveryRatio(this.lines),
           boxs: this.recoveryRatio(this.boxes),
         });
+      } else if (type === 4 ) {
+        this.boxes = []
+        this.lines = {"cols":[], "rows": []}
+        this.supplyRangeLines();
       } else {
         this.merge_bboxs = [];
         this.active_rect = [0, 0, 0, 0];
