@@ -843,9 +843,13 @@ export default {
       return boxes;
     },
     lines_to_boxes(lines) {
-      const points = this.lines_to_points(lines);
-      const _boxes = this.points_to_boxes(points, lines);
-      return _boxes;
+      try {
+        const points = this.lines_to_points(lines);
+        const _boxes = this.points_to_boxes(points, lines);
+        return _boxes;
+      } catch (e) {
+        return []
+      }  
     },
 
     drawRect: _.throttle(function (rect) {
