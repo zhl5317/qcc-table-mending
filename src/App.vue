@@ -2,13 +2,16 @@
   <div style="width: 100%; display: block">
     <TableMendingVue
       :image="image"
-      :data="data"
+      :data="{...jsonData}"
       :options="options"
       @rowadd="rowadd"
       @coladd="coladd"
       @mergelines="mergelines"
       @deleteline="deleteline"
       @savemending="savemending"
+      @automending="automending"
+      @clearmending="clearmending"
+      @autorowsmending="autorowsmending"
     />
   </div>
 </template>
@@ -18,7 +21,13 @@ import TableMendingVue from "./components/TableMending.vue";
 export default {
   name: "HelloWorld",
   data() {
-    return {};
+    return {
+      jsonData:  {
+          boxs: [],
+          lines: { cols: [], rows: [] },
+          cells:[]
+        }
+    };
   },
   props: {
     data: {
@@ -27,6 +36,7 @@ export default {
         return {
           boxs: [],
           lines: { cols: [], rows: [] },
+          cells:[]
         };
       },
     },
@@ -36,7 +46,7 @@ export default {
     },
     image: {
       type: String,
-      default: () => "./2354.png",
+      default: () => "./ss.png",
     },
   },
   components: {
@@ -44,12 +54,16 @@ export default {
   },
   watch: {
     data: {
-      immediate: true,
+      immediate: false,
       deep: true,
       handler(val) {
-        console.log(val);
+        this.jsonData = val
+        console.log(val, "1111fff");
       },
     },
+  },
+  created(){
+    this.jsonData = this.data
   },
   methods: {
     rowadd(e) {
@@ -65,7 +79,17 @@ export default {
       this.$emit("deleteline", e);
     },
     savemending(e) {
+      console.log("savemending", e)
       this.$emit("savemending", e);
+    },
+    automending(e){
+      this.$emit("automending", e);
+    },
+    clearmending(e){
+      this.$emit("clearmending", e);
+    },
+    autorowsmending(e){
+      this.$emit("autorowsmending", e);
     },
   },
 };

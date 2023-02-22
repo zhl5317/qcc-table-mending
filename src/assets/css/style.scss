@@ -5,14 +5,15 @@
 }
 
 .tooltips {
-  width: 180px;
-  height: 26px;
+  width: 170px;
+  height: 54px;
   background: #fff;
   border-radius: 4px;
   left: calc(50% + var(--toolsLeft));
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
   padding: 10px;
+  text-align: left;
   background: grey;
   a {
     margin: 0 2px;
@@ -42,8 +43,6 @@
   width: 16px;
   height: 7px;
   position: absolute;
-  /*right: 27px;
-            top: 0px;*/
   background: #fff;
 }
 .tooltips.left:before {
@@ -59,3 +58,4 @@
   left: 0;
   top: 17px;
 }
+
